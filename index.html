@@ -6,12 +6,12 @@
     <title>G. Rupali | AI Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root { --bg: #030014; --card-bg: rgba(255,255,255,0.03); --glass-border: rgba(255,255,255,0.08); --primary: #7000ff; --secondary: #00d4ff; --accent: #ff0055; --text: #fff; --muted: #a1a1aa; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; overflow-x: hidden; }
-        
+
         .ambient-light { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 15% 50%, rgba(112,0,255,0.15), transparent 40%), radial-gradient(circle at 85% 30%, rgba(0,212,255,0.15), transparent 40%); animation: pulseLight 10s infinite alternate; }
         @keyframes pulseLight { 0% { opacity: 0.5; transform: scale(1); } 100% { opacity: 1; transform: scale(1.1); } }
 
@@ -29,31 +29,45 @@
 
         .widget { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 24px; padding: 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
         .widget:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        
+
         .w-profile { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(145deg, rgba(112,0,255,0.1), rgba(0,0,0,0)); }
         .w-patent { grid-column: span 2; background: linear-gradient(145deg, rgba(0,212,255,0.05), rgba(0,0,0,0)); border-color: rgba(0,212,255,0.2); }
         .w-edu { grid-column: span 2; }
         .w-skills { grid-column: span 2; }
         .w-projects { grid-column: span 4; }
-        .w-certs { grid-column: span 2; }
+        .w-internship { grid-column: span 2; background: linear-gradient(145deg, rgba(255,0,85,0.05), rgba(0,0,0,0)); border-color: rgba(255,0,85,0.2); }
+        .w-certs { grid-column: span 1; }
+        .w-hackathons { grid-column: span 1; }
 
         h2 { font-family: 'Space Grotesk'; font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         h2 i { color: var(--secondary); }
-        
+
         .avatar { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 20px; box-shadow: 0 0 30px rgba(112,0,255,0.3); }
         .role-badge { background: rgba(112,0,255,0.2); color: #d8b4fe; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 15px; display: inline-block; }
-        
+
         .patent-number { font-family: 'Space Grotesk'; font-size: 2.5rem; font-weight: 700; color: var(--secondary); margin: 10px 0; text-shadow: 0 0 20px rgba(0,212,255,0.4); }
         .patent-status { display: inline-flex; align-items: center; gap: 5px; background: rgba(0,255,136,0.1); color: #00ff88; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 10px; }
         .inventor-list { font-size: 0.8rem; color: var(--muted); margin-top: 10px; font-style: italic; }
-        
+
         .btn-pdf { display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: none; font-family: inherit; background: rgba(0,212,255,0.1); border: 1px solid var(--secondary); color: var(--secondary); font-size: 0.9rem; }
         .btn-pdf:hover { background: var(--secondary); color: var(--bg); transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,212,255,0.3); }
+
+        .btn-resume { display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: 1px solid var(--primary); font-family: inherit; background: rgba(112,0,255,0.15); color: #d8b4fe; font-size: 0.9rem; }
+        .btn-resume:hover { background: var(--primary); color: #fff; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(112,0,255,0.4); }
+
+        .btn-cert { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 10px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: 1px solid var(--accent); font-family: inherit; background: rgba(255,0,85,0.1); color: #ff7fa8; font-size: 0.85rem; }
+        .btn-cert:hover { background: var(--accent); color: #fff; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,0,85,0.3); }
 
         .edu-card { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; margin-bottom: 10px; border-left: 3px solid var(--accent); }
         .edu-degree { font-weight: 600; font-size: 1rem; }
         .edu-school { color: var(--muted); font-size: 0.85rem; }
-        
+
+        .intern-card { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; margin-bottom: 10px; border-left: 3px solid var(--accent); }
+        .intern-title { font-weight: 600; font-size: 1rem; }
+        .intern-org { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+        .intern-duration { color: var(--secondary); font-size: 0.8rem; margin-top: 6px; }
+        .intern-desc { color: var(--muted); font-size: 0.82rem; margin-top: 8px; line-height: 1.5; }
+
         .tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .tag { background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
         .tag:hover { background: var(--primary); border-color: var(--primary); }
@@ -62,12 +76,15 @@
         .folder-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; cursor: pointer; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
         .folder-card:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); }
         .folder-icon { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
-        
+
         .cert-item { background: rgba(255,255,255,0.03); padding: 10px 15px; border-radius: 8px; margin-bottom: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
         .cert-item i { color: var(--secondary); }
 
-        @media (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } .w-profile, .w-patent, .w-edu, .w-skills, .w-projects, .w-certs { grid-column: span 2; } }
-        @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; } .w-profile, .w-patent, .w-edu, .w-skills, .w-projects, .w-certs { grid-column: span 1; } .intro-title { font-size: 3rem; } }
+        .hackathon-item { background: rgba(255,255,255,0.03); padding: 10px 15px; border-radius: 8px; margin-bottom: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+        .hackathon-item i { color: var(--accent); }
+
+        @media (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } .w-profile, .w-patent, .w-edu, .w-skills, .w-projects, .w-internship, .w-certs, .w-hackathons { grid-column: span 2; } }
+        @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; } .w-profile, .w-patent, .w-edu, .w-skills, .w-projects, .w-internship, .w-certs, .w-hackathons { grid-column: span 1; } .intro-title { font-size: 3rem; } }
     </style>
 </head>
 <body>
@@ -85,7 +102,9 @@
             <div class="widget w-edu" id="edu-widget"></div>
             <div class="widget w-skills" id="skills-widget"></div>
             <div class="widget w-projects" id="projects-widget"></div>
+            <div class="widget w-internship" id="internship-widget"></div>
             <div class="widget w-certs" id="certs-widget"></div>
+            <div class="widget w-hackathons" id="hackathons-widget"></div>
         </div>
     </div>
 
@@ -96,7 +115,7 @@
             document.getElementById('main-content').classList.add('visible');
         }
 
-        async function viewPatent(url) {
+        async function downloadDocument(url, filename) {
             try {
                 const response = await fetch(url);
                 if (!response.ok) throw new Error('Network response was not ok');
@@ -104,7 +123,7 @@
                 const blobUrl = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = blobUrl;
-                a.download = 'Patent_IN202641053225_A1.pdf';
+                a.download = filename;
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
@@ -113,6 +132,10 @@
                 console.error("Direct download failed, opening in browser:", error);
                 window.open(url, '_blank');
             }
+        }
+
+        function viewPatent(url) {
+            downloadDocument(url, 'Patent_IN202641053225_A1.pdf');
         }
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -126,6 +149,10 @@
                 <div class="tags" style="margin-top:25px; justify-content:center;">
                     ${d.profile.socials.map(s => `<a href="${s.link}" target="_blank" class="tag"><i class="${s.icon}"></i> ${s.label}</a>`).join('')}
                 </div>
+                ${d.profile.resumeLink ? `
+                <button onclick="downloadDocument('${d.profile.resumeLink}', 'G_Rupali_Resume.pdf')" class="btn-resume">
+                    <i class="fas fa-download"></i> Download Resume
+                </button>` : ''}
             `;
 
             document.getElementById('patent-widget').innerHTML = `
@@ -173,10 +200,33 @@
                 </div>
             `;
 
+            document.getElementById('internship-widget').innerHTML = `
+                <h2><i class="fas fa-briefcase"></i> Internship</h2>
+                ${d.internships.map(i => `
+                    <div class="intern-card">
+                        <div class="intern-title">${i.title}</div>
+                        <div class="intern-org">${i.org}</div>
+                        <div class="intern-duration"><i class="fas fa-calendar-alt"></i> ${i.duration}</div>
+                        <div class="intern-desc">${i.desc}</div>
+                        ${i.certLink ? `
+                        <button onclick="downloadDocument('${i.certLink}', 'CRIS_Internship_Certificate.pdf')" class="btn-cert">
+                            <i class="fas fa-file-download"></i> View Certificate
+                        </button>` : ''}
+                    </div>
+                `).join('')}
+            `;
+
             document.getElementById('certs-widget').innerHTML = `
                 <h2><i class="fas fa-certificate"></i> Certifications</h2>
                 ${d.certifications.map(c => `
                     <div class="cert-item"><i class="fas fa-check"></i> ${c}</div>
+                `).join('')}
+            `;
+
+            document.getElementById('hackathons-widget').innerHTML = `
+                <h2><i class="fas fa-trophy"></i> Hackathons</h2>
+                ${d.hackathons.map(h => `
+                    <div class="hackathon-item"><i class="fas fa-bolt"></i> ${h}</div>
                 `).join('')}
             `;
         });
