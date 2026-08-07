@@ -39,7 +39,7 @@ const PORTFOLIO_DATA = {
             org: "Centre for Railway Information Systems, Chennai",
             desc: "Completed internship training under the guidance of the Regional General Manager, Chennai at the Centre for Railway Information Systems (CRIS), an organisation of the Ministry of Railways, Govt. of India.",
             duration: "22nd June – 20th July 2026",
-            certLink: "/Chennai_-_G_Rupali.pdf"
+            certLink: "/Chennai%20-%20G%20Rupali.pdf"
         }
     ],
     certifications: ["Cybersecurity Analyst Job Simulation", "Learn Python Programming", "A1 Certificate in German"],
